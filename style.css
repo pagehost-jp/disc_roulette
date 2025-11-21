@@ -212,15 +212,33 @@ body {
   margin-bottom: 0;
 }
 
+/* Horizontal layout for reels */
+.result-horizontal {
+  display: flex;
+  gap: 16px;
+}
+
+.result-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: var(--bg-dark);
+  border-radius: 12px;
+}
+
 .reel-name {
   font-size: 0.9rem;
   color: var(--text-sub);
 }
 
 .reel-value {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--success);
+  text-align: center;
 }
 
 /* ========== Machine Section ========== */
