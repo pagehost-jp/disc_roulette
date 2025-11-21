@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ディスクルーレット | 目押し＆機種選択ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>ディスクルーレット</h1>
+      <p class="subtitle">迷いをゼロに。集中力を最大化。</p>
+    </header>
+
+    <!-- ========== 目押しルーレットセクション ========== -->
+    <section class="section">
+      <h2 class="section-title">目押しルーレット</h2>
+
+      <!-- タブ切り替え -->
+      <div class="tab-container">
+        <button class="tab-btn active" data-tab="disc21">ディスクアップ（21コマ）</button>
+        <button class="tab-btn" data-tab="disc20">ウルトラリミックス（20コマ）</button>
+      </div>
+
+      <!-- 21コマルーレット -->
+      <div id="disc21" class="tab-content active">
+        <div class="roulette-box">
+          <h3>ディスクアップ（21コマ）</h3>
+          <button class="btn btn-primary btn-large" id="btn-disc21">
+            ルーレットを回す
+          </button>
+          <div class="result-box" id="result-disc21">
+            <p class="result-label">結果</p>
+            <div class="result-item">
+              <span class="reel-name">左リール</span>
+              <span class="reel-value" id="left-21">-</span>
+            </div>
+            <div class="result-item">
+              <span class="reel-name">右リール</span>
+              <span class="reel-value" id="right-21">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20コマルーレット -->
+      <div id="disc20" class="tab-content">
+        <div class="roulette-box">
+          <h3>ディスクアップ ウルトラリミックス（20コマ）</h3>
+          <button class="btn btn-primary btn-large" id="btn-disc20">
+            ルーレットを回す
+          </button>
+          <div class="result-box" id="result-disc20">
+            <p class="result-label">結果</p>
+            <div class="result-item">
+              <span class="reel-name">左リール</span>
+              <span class="reel-value" id="left-20">-</span>
+            </div>
+            <div class="result-item">
+              <span class="reel-name">右リール</span>
+              <span class="reel-value" id="right-20">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 機種選択ルーレットセクション ========== -->
+    <section class="section">
+      <h2 class="section-title">103％機種ルーレット</h2>
+
+      <div class="machine-section">
+        <!-- 機種追加フォーム -->
+        <div class="add-machine-form">
+          <input type="text" id="machine-input" placeholder="機種名を入力" class="input-text">
+          <button class="btn btn-secondary" id="btn-add-machine">追加</button>
+        </div>
+
+        <!-- 機種リスト -->
+        <div class="machine-list-container">
+          <p class="list-label">登録機種一覧（チェックで当日候補に）</p>
+          <ul id="machine-list" class="machine-list">
+            <!-- JSで動的に追加 -->
+          </ul>
+          <p class="empty-message" id="empty-message">機種が登録されていません</p>
+        </div>
+
+        <!-- 機種ルーレットボタン -->
+        <button class="btn btn-primary btn-large" id="btn-machine-roulette">
+          選択した機種からルーレットを回す
+        </button>
+
+        <!-- 機種ルーレット結果 -->
+        <div class="result-box result-machine" id="result-machine">
+          <p class="result-label">今日打つのは...</p>
+          <p class="machine-result" id="machine-result">-</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>disc_roulette_tool - 迷いをゼロに。</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
