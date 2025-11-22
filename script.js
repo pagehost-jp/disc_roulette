@@ -124,10 +124,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================
-  // 20コマルーレット
+  // 20コマルーレット（画像付き）
   // ========================================
+  const leftImg20 = document.getElementById('left-20-img');
+  const rightImg20 = document.getElementById('right-20-img');
+
   btnDisc20.addEventListener('click', () => {
-    spinRoulette(leftResult20, rightResult20, resultBox20, 20);
+    let count = 0;
+    const duration = 1500;
+    const interval = 50;
+    const iterations = duration / interval;
+
+    resultBox20.classList.add('animating');
+    leftImg20.style.display = 'block';
+    rightImg20.style.display = 'block';
+
+    const spin = setInterval(() => {
+      const leftNum = getRandomInt(20);
+      const rightNum = getRandomInt(20);
+
+      leftResult20.textContent = `上段 ${leftNum}コマ目`;
+      rightResult20.textContent = `上段 ${rightNum}コマ目`;
+      leftImg20.src = `ウルトラリミックス左リール個別データ/左${leftNum}.png`;
+      rightImg20.src = `ウルトラリミックス右リール個別データ/右${rightNum}.png`;
+
+      count++;
+
+      if (count >= iterations) {
+        clearInterval(spin);
+        // 最終結果
+        const leftFinal = getRandomInt(20);
+        const rightFinal = getRandomInt(20);
+        leftResult20.textContent = `上段 ${leftFinal}コマ目`;
+        rightResult20.textContent = `上段 ${rightFinal}コマ目`;
+        leftImg20.src = `ウルトラリミックス左リール個別データ/左${leftFinal}.png`;
+        rightImg20.src = `ウルトラリミックス右リール個別データ/右${rightFinal}.png`;
+        resultBox20.classList.remove('animating');
+      }
+    }, interval);
   });
 
   // ========================================

@@ -241,6 +241,13 @@ body {
   text-align: center;
 }
 
+.reel-result-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
 /* ========== Machine Section ========== */
 .machine-section {
   display: flex;
