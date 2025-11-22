@@ -349,6 +349,90 @@ body {
   font-size: 0.8rem;
 }
 
+/* ========== Reel Images ========== */
+.btn-reel-toggle {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.reel-images {
+  display: none;
+  margin-top: 20px;
+  background: var(--bg-dark);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+
+.reel-images.show {
+  display: block;
+}
+
+.reel-images-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.reel-images-header h4 {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.btn-close {
+  background: transparent;
+  color: var(--text-sub);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-close:hover {
+  color: var(--text-main);
+  border-color: var(--text-main);
+}
+
+.reel-image-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.reel-tab {
+  flex: 1;
+  padding: 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-sub);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reel-tab:hover {
+  border-color: var(--accent);
+  color: var(--text-main);
+}
+
+.reel-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.reel-image-container {
+  text-align: center;
+  overflow-x: auto;
+}
+
+.reel-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* ========== Animation ========== */
 @keyframes pulse {
   0%, 100% {

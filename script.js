@@ -252,6 +252,46 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMachines();
 
   // ========================================
+  // リール配列表示
+  // ========================================
+  const btnShowReel = document.getElementById('btn-show-reel');
+  const btnCloseReel = document.getElementById('btn-close-reel');
+  const reelImages = document.getElementById('reel-images');
+  const reelTabs = document.querySelectorAll('.reel-tab');
+  const reelImg = document.getElementById('reel-img');
+
+  const reelImageSources = {
+    full: 'reel-ur-full.jpg',
+    left: 'reel-ur-left.png',
+    right: 'reel-ur-right.png'
+  };
+
+  if (btnShowReel) {
+    btnShowReel.addEventListener('click', () => {
+      reelImages.classList.add('show');
+    });
+  }
+
+  if (btnCloseReel) {
+    btnCloseReel.addEventListener('click', () => {
+      reelImages.classList.remove('show');
+    });
+  }
+
+  reelTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const reelType = tab.dataset.reel;
+
+      // タブのアクティブ状態を切り替え
+      reelTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // 画像を切り替え
+      reelImg.src = reelImageSources[reelType];
+    });
+  });
+
+  // ========================================
   // 機種ルーレット
   // ========================================
   btnMachineRoulette.addEventListener('click', () => {
