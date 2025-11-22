@@ -252,19 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMachines();
 
   // ========================================
-  // リール配列表示
+  // リール配列表示（ウルトラリミックス）
   // ========================================
   const btnShowReel = document.getElementById('btn-show-reel');
   const btnCloseReel = document.getElementById('btn-close-reel');
   const reelImages = document.getElementById('reel-images');
-  const reelTabs = document.querySelectorAll('.reel-tab');
-  const reelImg = document.getElementById('reel-img');
-
-  const reelImageSources = {
-    full: 'reel-ur-full.jpg',
-    left: 'reel-ur-left.png',
-    right: 'reel-ur-right.png'
-  };
 
   if (btnShowReel) {
     btnShowReel.addEventListener('click', () => {
@@ -278,18 +270,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  reelTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const reelType = tab.dataset.reel;
+  // ========================================
+  // リール配列表示（ディスクアップ2）
+  // ========================================
+  const btnShowReel21 = document.getElementById('btn-show-reel-21');
+  const btnCloseReel21 = document.getElementById('btn-close-reel-21');
+  const reelImages21 = document.getElementById('reel-images-21');
 
-      // タブのアクティブ状態を切り替え
-      reelTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // 画像を切り替え
-      reelImg.src = reelImageSources[reelType];
+  if (btnShowReel21) {
+    btnShowReel21.addEventListener('click', () => {
+      reelImages21.classList.add('show');
     });
-  });
+  }
+
+  if (btnCloseReel21) {
+    btnCloseReel21.addEventListener('click', () => {
+      reelImages21.classList.remove('show');
+    });
+  }
 
   // ========================================
   // 機種ルーレット
