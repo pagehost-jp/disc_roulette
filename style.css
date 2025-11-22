@@ -223,8 +223,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 20px;
+  gap: 8px;
+  padding: 12px;
   background: var(--bg-dark);
   border-radius: 12px;
 }
@@ -242,14 +242,9 @@ body {
 }
 
 .reel-result-img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-top: 12px;
-}
-
-.result-column {
-  min-height: 160px;
+  border-radius: 4px;
 }
 
 /* ========== Machine Section ========== */
