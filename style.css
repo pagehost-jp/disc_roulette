@@ -530,6 +530,10 @@ body {
     gap: 6px;
   }
 
+  .reel-result-img {
+    min-height: 60px;
+  }
+
   .reel-name {
     font-size: 0.8rem;
   }
