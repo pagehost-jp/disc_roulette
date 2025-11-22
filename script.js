@@ -117,10 +117,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
-  // 21コマルーレット
+  // 21コマルーレット（画像付き）
   // ========================================
+  const leftImg21 = document.getElementById('left-21-img');
+  const rightImg21 = document.getElementById('right-21-img');
+
   btnDisc21.addEventListener('click', () => {
-    spinRoulette(leftResult21, rightResult21, resultBox21, 21);
+    let count = 0;
+    const duration = 1500;
+    const interval = 50;
+    const iterations = duration / interval;
+
+    resultBox21.classList.add('animating');
+    leftImg21.style.display = 'block';
+    rightImg21.style.display = 'block';
+
+    const spin = setInterval(() => {
+      const leftNum = getRandomInt(21);
+      const rightNum = getRandomInt(21);
+
+      leftResult21.textContent = `上段 ${leftNum}コマ目`;
+      rightResult21.textContent = `上段 ${rightNum}コマ目`;
+      leftImg21.src = `ディスクアップ2　左リールデータ/左${leftNum}.png`;
+      rightImg21.src = `ディスクアップ2　右リールデータ/右${rightNum}.png`;
+
+      count++;
+
+      if (count >= iterations) {
+        clearInterval(spin);
+        // 最終結果
+        const leftFinal = getRandomInt(21);
+        const rightFinal = getRandomInt(21);
+        leftResult21.textContent = `上段 ${leftFinal}コマ目`;
+        rightResult21.textContent = `上段 ${rightFinal}コマ目`;
+        leftImg21.src = `ディスクアップ2　左リールデータ/左${leftFinal}.png`;
+        rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
+        resultBox21.classList.remove('animating');
+      }
+    }, interval);
   });
 
   // ========================================
