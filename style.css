@@ -185,10 +185,10 @@ body {
 
 /* ========== Result Box ========== */
 .result-box {
-  margin-top: 24px;
-  padding: 8px;
+  margin-top: 20px;
+  padding: 6px;
   background: var(--bg-input);
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid var(--border);
 }
 
@@ -215,12 +215,11 @@ body {
 /* Horizontal layout for reels */
 .result-horizontal {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .result-horizontal .reel-result-img {
   width: 100%;
-  max-width: 250px;
   height: auto;
 }
 
@@ -229,10 +228,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 16px;
+  gap: 8px;
+  padding: 10px;
   background: var(--bg-dark);
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .reel-name {
