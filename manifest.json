@@ -1,6 +1,6 @@
 {
-  "name": "ディスクルーレット",
-  "short_name": "ディスクルーレット",
+  "name": "REMIX",
+  "short_name": "REMIX",
   "description": "目押し練習＆機種選択ルーレット",
   "start_url": "./index.html",
   "display": "standalone",
