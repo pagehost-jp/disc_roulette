@@ -186,7 +186,7 @@ body {
 /* ========== Result Box ========== */
 .result-box {
   margin-top: 24px;
-  padding: 24px;
+  padding: 8px;
   background: var(--bg-input);
   border-radius: 12px;
   border: 2px solid var(--border);
@@ -215,7 +215,7 @@ body {
 /* Horizontal layout for reels */
 .result-horizontal {
   display: flex;
-  gap: 12px;
+  gap: 8px;
 }
 
 .result-horizontal .reel-result-img {
