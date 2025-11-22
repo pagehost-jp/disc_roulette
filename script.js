@@ -119,6 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const rightImg21 = document.getElementById('right-21-img');
   const history21 = document.getElementById('history-21');
   const btnClear21 = document.getElementById('btn-clear-21');
+  const colorResult21 = document.getElementById('color-result-21');
+  const colorLabel21 = document.getElementById('color-label-21');
   const MAX_SPINS = 3;
 
   // 左リールグループ定義
@@ -168,23 +170,22 @@ document.addEventListener('DOMContentLoaded', () => {
         rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
         resultBox21.classList.remove('animating');
 
+        // 1回目だけ青/赤ルーレット（50%ずつ）- 上部に表示
+        if (currentCount === 0) {
+          const color = Math.random() < 0.5 ? 'blue' : 'red';
+          const colorText = color === 'blue' ? '青' : '赤';
+          colorLabel21.textContent = colorText;
+          colorLabel21.className = `color-label-large color-${color}`;
+          colorResult21.style.display = 'flex';
+        }
+
         // 履歴に追加
         const historyItem = document.createElement('div');
         historyItem.className = 'history-item';
-
-        // 1回目だけ青/赤ルーレット（50%ずつ）
-        let colorHtml = '';
-        if (currentCount === 0) {
-          const color = Math.random() < 0.5 ? 'blue' : 'red';
-          const colorLabel = color === 'blue' ? '青' : '赤';
-          colorHtml = `<span class="color-label color-${color}">${colorLabel}</span>`;
-        }
-
         historyItem.innerHTML = `
           <span class="group-label">グループ${groupOrder[currentCount]}</span>
           <img src="ディスクアップ2　左リールデータ/左${leftFinal}.png" alt="">
           <img src="ディスクアップ2　右リールデータ/右${rightFinal}.png" alt="">
-          ${colorHtml}
         `;
         history21.appendChild(historyItem);
         btnClear21.style.display = 'block';
@@ -195,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnClear21.addEventListener('click', () => {
     history21.innerHTML = '';
     btnClear21.style.display = 'none';
+    colorResult21.style.display = 'none';
   });
 
   // ========================================
