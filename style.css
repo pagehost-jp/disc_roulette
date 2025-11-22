@@ -560,7 +560,15 @@ body {
   }
 
   .reel-result-img {
-    min-height: 60px;
+    /* 最大画像: 746x254px, アスペクト比約2.9:1 */
+    /* モバイル幅約170pxで表示時、高さ約59px必要 */
+    min-height: 65px;
+    object-fit: contain;
+  }
+
+  .result-column {
+    /* 枠の高さを固定して動かないようにする */
+    min-height: 100px;
   }
 
   .reel-name {
