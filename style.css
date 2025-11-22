@@ -522,12 +522,12 @@ body {
   }
 
   .result-column {
-    padding: 4px;
-    gap: 2px;
+    padding: 8px;
+    gap: 6px;
   }
 
   .result-horizontal {
-    gap: 4px;
+    gap: 6px;
   }
 
   .reel-name {
