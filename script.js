@@ -113,10 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
-  // 21コマルーレット（画像のみ）
+  // 21コマルーレット（履歴機能付き）
   // ========================================
   const leftImg21 = document.getElementById('left-21-img');
   const rightImg21 = document.getElementById('right-21-img');
+  const history21 = document.getElementById('history-21');
+  const btnClear21 = document.getElementById('btn-clear-21');
 
   btnDisc21.addEventListener('click', () => {
     let count = 0;
@@ -145,15 +147,32 @@ document.addEventListener('DOMContentLoaded', () => {
         leftImg21.src = `ディスクアップ2　左リールデータ/左${leftFinal}.png`;
         rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
         resultBox21.classList.remove('animating');
+
+        // 履歴に追加
+        const historyItem = document.createElement('div');
+        historyItem.className = 'history-item';
+        historyItem.innerHTML = `
+          <img src="ディスクアップ2　左リールデータ/左${leftFinal}.png" alt="">
+          <img src="ディスクアップ2　右リールデータ/右${rightFinal}.png" alt="">
+        `;
+        history21.appendChild(historyItem);
+        btnClear21.style.display = 'block';
       }
     }, interval);
   });
 
+  btnClear21.addEventListener('click', () => {
+    history21.innerHTML = '';
+    btnClear21.style.display = 'none';
+  });
+
   // ========================================
-  // 20コマルーレット（画像のみ）
+  // 20コマルーレット（履歴機能付き）
   // ========================================
   const leftImg20 = document.getElementById('left-20-img');
   const rightImg20 = document.getElementById('right-20-img');
+  const history20 = document.getElementById('history-20');
+  const btnClear20 = document.getElementById('btn-clear-20');
 
   btnDisc20.addEventListener('click', () => {
     let count = 0;
@@ -182,8 +201,23 @@ document.addEventListener('DOMContentLoaded', () => {
         leftImg20.src = `ウルトラリミックス左リール個別データ/左${leftFinal}.png`;
         rightImg20.src = `ウルトラリミックス右リール個別データ/右${rightFinal}.png`;
         resultBox20.classList.remove('animating');
+
+        // 履歴に追加
+        const historyItem = document.createElement('div');
+        historyItem.className = 'history-item';
+        historyItem.innerHTML = `
+          <img src="ウルトラリミックス左リール個別データ/左${leftFinal}.png" alt="">
+          <img src="ウルトラリミックス右リール個別データ/右${rightFinal}.png" alt="">
+        `;
+        history20.appendChild(historyItem);
+        btnClear20.style.display = 'block';
       }
     }, interval);
+  });
+
+  btnClear20.addEventListener('click', () => {
+    history20.innerHTML = '';
+    btnClear20.style.display = 'none';
   });
 
   // ========================================
