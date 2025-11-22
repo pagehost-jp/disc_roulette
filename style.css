@@ -235,7 +235,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 12px;
-  background: var(--bg-dark);
+  background: #2a3a5e;
   border-radius: 12px;
   /* 枠サイズ固定（最大画像746x254の比率を維持） */
   width: 160px;
