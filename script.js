@@ -113,14 +113,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
-  // 21コマルーレット（履歴機能付き）
+  // 21コマルーレット（履歴機能付き・最大3回・グループ制）
   // ========================================
   const leftImg21 = document.getElementById('left-21-img');
   const rightImg21 = document.getElementById('right-21-img');
   const history21 = document.getElementById('history-21');
   const btnClear21 = document.getElementById('btn-clear-21');
+  const MAX_SPINS = 3;
+
+  // 左リールグループ定義
+  const LEFT_GROUPS = {
+    A: [16, 17, 18, 19, 20, 21, 1],  // 1回目
+    B: [2, 3, 4, 5, 6, 7, 8],         // 2回目
+    C: [9, 10, 11, 12, 13, 14, 15]    // 3回目
+  };
 
   btnDisc21.addEventListener('click', () => {
+    // 最大3回チェック
+    const currentCount = history21.querySelectorAll('.history-item').length;
+    if (currentCount >= MAX_SPINS) {
+      alert(`最大${MAX_SPINS}回までです。クリアしてください。`);
+      return;
+    }
+
+    // 現在の回数に応じてグループを選択
+    const groupOrder = ['A', 'B', 'C'];
+    const currentGroup = LEFT_GROUPS[groupOrder[currentCount]];
+
     let count = 0;
     const duration = 1500;
     const interval = 50;
@@ -131,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
     rightImg21.style.display = 'block';
 
     const spin = setInterval(() => {
-      const leftNum = getRandomInt(21);
+      // アニメーション中は該当グループ内でランダム表示
+      const leftNum = getRandomElement(currentGroup);
       const rightNum = getRandomInt(21);
 
       leftImg21.src = `ディスクアップ2　左リールデータ/左${leftNum}.png`;
@@ -141,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (count >= iterations) {
         clearInterval(spin);
-        // 最終結果
-        const leftFinal = getRandomInt(21);
+        // 最終結果（左は該当グループから、右は全体から）
+        const leftFinal = getRandomElement(currentGroup);
         const rightFinal = getRandomInt(21);
         leftImg21.src = `ディスクアップ2　左リールデータ/左${leftFinal}.png`;
         rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
@@ -152,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const historyItem = document.createElement('div');
         historyItem.className = 'history-item';
         historyItem.innerHTML = `
+          <span class="group-label">グループ${groupOrder[currentCount]}</span>
           <img src="ディスクアップ2　左リールデータ/左${leftFinal}.png" alt="">
           <img src="ディスクアップ2　右リールデータ/右${rightFinal}.png" alt="">
         `;
@@ -167,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================
-  // 20コマルーレット（履歴機能付き）
+  // 20コマルーレット（履歴機能付き・最大3回）
   // ========================================
   const leftImg20 = document.getElementById('left-20-img');
   const rightImg20 = document.getElementById('right-20-img');
@@ -175,6 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnClear20 = document.getElementById('btn-clear-20');
 
   btnDisc20.addEventListener('click', () => {
+    // 最大3回チェック
+    const currentCount = history20.querySelectorAll('.history-item').length;
+    if (currentCount >= MAX_SPINS) {
+      alert(`最大${MAX_SPINS}回までです。クリアしてください。`);
+      return;
+    }
     let count = 0;
     const duration = 1500;
     const interval = 50;
