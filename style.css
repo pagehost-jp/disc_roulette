@@ -664,3 +664,7 @@ body {
     font-size: 1.6rem;
   }
 }
+
+.history-item {
+  opacity: 1 !important;
+}
