@@ -321,15 +321,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12px 0;
+  padding: 0 8px;
 }
 
 .color-label-large {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 16px;
+  width: 60px;
+  height: 60px;
   color: white;
   font-size: 24px;
   font-weight: bold;

@@ -151,6 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
     leftImg21.style.display = 'block';
     rightImg21.style.display = 'block';
 
+    // 1回目は青/赤も一緒に回す
+    const isFirstSpin = currentCount === 0;
+    if (isFirstSpin) {
+      colorResult21.style.display = 'flex';
+    }
+
     const spin = setInterval(() => {
       // アニメーション中は該当グループ内でランダム表示
       const leftNum = getRandomElement(currentGroup);
@@ -158,6 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       leftImg21.src = `ディスクアップ2　左リールデータ/左${leftNum}.png`;
       rightImg21.src = `ディスクアップ2　右リールデータ/右${rightNum}.png`;
+
+      // 1回目は青/赤もランダムに切り替え
+      if (isFirstSpin) {
+        const tempColor = Math.random() < 0.5 ? 'blue' : 'red';
+        const tempText = tempColor === 'blue' ? '青' : '赤';
+        colorLabel21.textContent = tempText;
+        colorLabel21.className = `color-label-large color-${tempColor}`;
+      }
 
       count++;
 
@@ -170,13 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
         rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
         resultBox21.classList.remove('animating');
 
-        // 1回目だけ青/赤ルーレット（50%ずつ）- 上部に表示
-        if (currentCount === 0) {
+        // 1回目だけ青/赤の最終結果を確定
+        if (isFirstSpin) {
           const color = Math.random() < 0.5 ? 'blue' : 'red';
           const colorText = color === 'blue' ? '青' : '赤';
           colorLabel21.textContent = colorText;
           colorLabel21.className = `color-label-large color-${color}`;
-          colorResult21.style.display = 'flex';
         }
 
         // 履歴に追加
