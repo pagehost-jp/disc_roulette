@@ -355,6 +355,28 @@ body {
   width: 100%;
 }
 
+/* ディスクアップ2 - パステルピンク */
+#btn-show-reel-21 {
+  background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+  color: #333;
+  border: none;
+}
+
+#btn-show-reel-21:hover {
+  background: linear-gradient(135deg, #ffc0cb, #ffd1dc);
+}
+
+/* ウルトラリミックス - パステルブルー */
+#btn-show-reel {
+  background: linear-gradient(135deg, #a8d8ea, #c5e8f7);
+  color: #333;
+  border: none;
+}
+
+#btn-show-reel:hover {
+  background: linear-gradient(135deg, #c5e8f7, #d4f1f9);
+}
+
 .reel-images {
   display: none;
   margin-top: 20px;
