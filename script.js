@@ -17,14 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 21コマルーレット
   const btnDisc21 = document.getElementById('btn-disc21');
-  const leftResult21 = document.getElementById('left-21');
-  const rightResult21 = document.getElementById('right-21');
   const resultBox21 = document.getElementById('result-disc21');
 
   // 20コマルーレット
   const btnDisc20 = document.getElementById('btn-disc20');
-  const leftResult20 = document.getElementById('left-20');
-  const rightResult20 = document.getElementById('right-20');
   const resultBox20 = document.getElementById('result-disc20');
 
   // 機種ルーレット
@@ -117,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
-  // 21コマルーレット（画像付き）
+  // 21コマルーレット（画像のみ）
   // ========================================
   const leftImg21 = document.getElementById('left-21-img');
   const rightImg21 = document.getElementById('right-21-img');
@@ -136,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const leftNum = getRandomInt(21);
       const rightNum = getRandomInt(21);
 
-      leftResult21.textContent = `上段 ${leftNum}コマ目`;
-      rightResult21.textContent = `上段 ${rightNum}コマ目`;
       leftImg21.src = `ディスクアップ2　左リールデータ/左${leftNum}.png`;
       rightImg21.src = `ディスクアップ2　右リールデータ/右${rightNum}.png`;
 
@@ -148,8 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // 最終結果
         const leftFinal = getRandomInt(21);
         const rightFinal = getRandomInt(21);
-        leftResult21.textContent = `上段 ${leftFinal}コマ目`;
-        rightResult21.textContent = `上段 ${rightFinal}コマ目`;
         leftImg21.src = `ディスクアップ2　左リールデータ/左${leftFinal}.png`;
         rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
         resultBox21.classList.remove('animating');
@@ -158,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================
-  // 20コマルーレット（画像付き）
+  // 20コマルーレット（画像のみ）
   // ========================================
   const leftImg20 = document.getElementById('left-20-img');
   const rightImg20 = document.getElementById('right-20-img');
@@ -177,8 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const leftNum = getRandomInt(20);
       const rightNum = getRandomInt(20);
 
-      leftResult20.textContent = `上段 ${leftNum}コマ目`;
-      rightResult20.textContent = `上段 ${rightNum}コマ目`;
       leftImg20.src = `ウルトラリミックス左リール個別データ/左${leftNum}.png`;
       rightImg20.src = `ウルトラリミックス右リール個別データ/右${rightNum}.png`;
 
@@ -189,8 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // 最終結果
         const leftFinal = getRandomInt(20);
         const rightFinal = getRandomInt(20);
-        leftResult20.textContent = `上段 ${leftFinal}コマ目`;
-        rightResult20.textContent = `上段 ${rightFinal}コマ目`;
         leftImg20.src = `ウルトラリミックス左リール個別データ/左${leftFinal}.png`;
         rightImg20.src = `ウルトラリミックス右リール個別データ/右${rightFinal}.png`;
         resultBox20.classList.remove('animating');
