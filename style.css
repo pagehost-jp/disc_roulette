@@ -235,7 +235,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-dark);
   border-radius: 12px;
   /* 枠サイズ固定（最大画像746x254の比率を維持） */
   width: 160px;
@@ -244,8 +244,7 @@ body {
 
 .result-column .reel-result-img {
   width: 100%;
-  height: auto;
-  max-height: 80px;
+  height: 55px;
   object-fit: contain;
 }
 
