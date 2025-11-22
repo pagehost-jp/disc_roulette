@@ -242,15 +242,14 @@ body {
 }
 
 .reel-result-img {
-  max-width: 150px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin-top: 12px;
 }
 
 .result-column {
-  min-height: 200px;
-  justify-content: flex-start;
+  min-height: 160px;
 }
 
 /* ========== Machine Section ========== */
