@@ -168,6 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
         rightImg21.src = `ディスクアップ2　右リールデータ/右${rightFinal}.png`;
         resultBox21.classList.remove('animating');
 
+        // 青/赤ルーレット（50%ずつ）
+        const color = Math.random() < 0.5 ? 'blue' : 'red';
+        const colorLabel = color === 'blue' ? '青' : '赤';
+
         // 履歴に追加
         const historyItem = document.createElement('div');
         historyItem.className = 'history-item';
@@ -175,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="group-label">グループ${groupOrder[currentCount]}</span>
           <img src="ディスクアップ2　左リールデータ/左${leftFinal}.png" alt="">
           <img src="ディスクアップ2　右リールデータ/右${rightFinal}.png" alt="">
+          <span class="color-label color-${color}">${colorLabel}</span>
         `;
         history21.appendChild(historyItem);
         btnClear21.style.display = 'block';

@@ -296,6 +296,27 @@ body {
   writing-mode: vertical-rl;
 }
 
+.color-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 4px 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  writing-mode: vertical-rl;
+}
+
+.color-blue {
+  background: #3b82f6;
+}
+
+.color-red {
+  background: #ef4444;
+}
+
 .btn-clear {
   margin-top: 12px;
   width: 100%;
