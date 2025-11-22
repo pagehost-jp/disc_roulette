@@ -522,7 +522,11 @@ body {
   }
 
   .result-column {
-    padding: 6px;
+    padding: 4px;
+    gap: 2px;
+  }
+
+  .result-horizontal {
     gap: 4px;
   }
 
